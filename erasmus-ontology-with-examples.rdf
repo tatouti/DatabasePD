@@ -1,0 +1,633 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/"
+     xml:base="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:erasmus-ontology="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/">
+    <owl:Ontology rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/">
+        <owl:imports rdf:resource="file:/home/lou/Documents/Études/UniPD/database%20II/DatabasePD/erasmus.ttl"/>
+        <rdfs:comment>A ontology on the Erasmus mobility in 2019 and the cost of living in the world, to see if there is a correlation between the cost of a student&apos;s everyday expenses and their choice of mobility</rdfs:comment>
+        <rdfs:isDefinedBy>Lou Goubin, Théo Jaoudet and Clément Delrieux</rdfs:isDefinedBy>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasCitizen -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasCitizen">
+        <owl:inverseOf rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasNationality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasLocation">
+        <owl:inverseOf rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isSituatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasMobility -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasMobility">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Mobility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasNationality -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasNationality">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasReceivingOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasReceivingOrganization">
+        <owl:inverseOf rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasStudent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasSendingOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasSendingOrganization">
+        <owl:inverseOf rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasStudent"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasStudent -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasStudent"/>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isInReceivingOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isInReceivingOrganization">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Mobility"/>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isSituatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isSituatedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfAppartment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfAppartment">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/City"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfBarBeer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfBarBeer">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/City"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfBasics -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfBasics">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/City"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfCappucino -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfCappucino">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/City"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfMcDo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfMcDo">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/City"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Duration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Duration">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Mobility"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/FewerOpportunities -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/FewerOpportunities">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/FieldOfStudy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/FieldOfStudy">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/GenderGap -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/GenderGap">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Rank -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Rank">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/SpecialNeeds -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/SpecialNeeds">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isStudent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isStudent">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/age -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/age">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/gender -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/gender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/AffordableCity -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/AffordableCity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/City"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfAppartment"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</xsd:maxInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfBarBeer"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</xsd:maxInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfBasics"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</xsd:maxInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfCappucino"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</xsd:maxInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfMcDo"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</xsd:maxInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/ExpensiveCity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/City -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/City">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isSituatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Country"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Country -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Country"/>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/ExpensiveCity -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/ExpensiveCity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/City"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfAppartment"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1000.0</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfBarBeer"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfBasics"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">150.0</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfCappucino"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/CostOfMcDo"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Mobility -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Mobility">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isInReceivingOrganization"/>
+                <owl:someValuesFrom rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Organization -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Organization">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isSituatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/City"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Staff -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Staff">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isStudent"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Student -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Student">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isStudent"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasMobility"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isInReceivingOrganization"/>
+                        <owl:someValuesFrom rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Organization"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasSendingOrganization"/>
+                <owl:someValuesFrom rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/City"/>
+            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Country"/>
+            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Mobility"/>
+            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Organization"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/lou/ontologies/2023/11/untitled-ontology-16/mobility">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/lou/ontologies/2023/11/untitled-ontology-16/organization">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/lou/ontologies/2023/11/untitled-ontology-16/person">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>inferedReceivingOrganization</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/isInReceivingOrganization"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/lou/ontologies/2023/11/untitled-ontology-16/mobility"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/lou/ontologies/2023/11/untitled-ontology-16/organization"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasMobility"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/lou/ontologies/2023/11/untitled-ontology-16/person"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/lou/ontologies/2023/11/untitled-ontology-16/mobility"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/hasReceivingOrganization"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/lou/ontologies/2023/11/untitled-ontology-16/person"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/lou/ontologies/2023/11/untitled-ontology-16/organization"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
