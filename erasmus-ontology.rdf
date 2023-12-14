@@ -230,6 +230,15 @@
     
 
 
+    <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Score -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Score">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/SpecialNeeds -->
 
     <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/2023/12/erasmus-ontology/SpecialNeeds">
